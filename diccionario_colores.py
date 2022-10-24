@@ -1,16 +1,18 @@
 colores = dict()
 
 colores = {
-    "Amarillo" : "Yellow",
-    "Rosa"     : "Pink",
-    "Azul"     : "Blue",
-    "Blanco"   : "White",
-    "Rojo"     : "Red"
+    "amarillo" : "Yellow",
+    "rosa"     : "Pink",
+    "azul"     : "Blue",
+    "blanco"   : "White",
+    "rojo"     : "Red"
 }
+
+print("\n--- DICCIONARIO DE COLORES ---\n")
 
 def controlErrores():
     try:
-        color = input("¿Color? ")
+        color = input("¿Color? ").lower()
         print (f"{ color } = { colores[color]}")
     except KeyError:
         print ("Ese color no está en la lista")
