@@ -1,0 +1,47 @@
+CREATE OR REPLACE PACKAGE operaciones
+AS
+PROCEDURE insertar (p_numero emp.EMP_NO%TYPE,
+      p_apellido emp.APELLIDO%TYPE,
+      p_oficio emp.oficio%TYPE,
+      p_direccion emp.dir%TYPE,
+      p_fecha emp.fecha_alt%TYPE,
+      p_salario emp.salario%TYPE,
+      p_comision emp.comision%TYPE,
+      p_departamento emp.dept_no%TYPE);
+PROCEDURE borrar(NUMERO emp.EMP_NO%TYPE);
+PROCEDURE modificar(NUMERO emp.EMP_NO%TYPE
+          p_salario emp.salario%TYPE,);
+END;
+
+CREATE OR REPLACE PACKAGE BODY operaciones
+AS
+  PROCEDURE insertar (p_numero emp.EMP_NO%TYPE,
+      p_apellido emp.APELLIDO%TYPE,
+      p_oficio emp.oficio%TYPE,
+      p_direccion emp.dir%TYPE,
+      p_fecha emp.fecha_alt%TYPE,
+      p_salario emp.salario%TYPE,
+      p_comision emp.comision%TYPE,
+      p_departamento emp.dept_no%TYPE)
+    AS
+    BEGIN
+      INSERT INTO EMP VALUES
+      (p_numero, p_apellido, p_oficio, p_direccion, p_fecha, p_salario, p_comision, p_departamento)
+    END;
+    
+  PROCEDURE borrar(NUMERO  emp.EMP_NO%TYPE)
+    AS
+    BEGIN
+      DELETE FROM EMP WHERE EMP_NO=NUMERO;
+      COMMIT;
+    END;
+    
+  PROCEDURE modificar(NUMERO emp.EMP_NO%TYPE, P_SALARIO EMP.EMP_SALARIO%TYPE)
+    AS
+    BEGIN
+      UPDATE EMP
+      SET SALARIO = p_salario,
+      WHERE EMP_NO=NUMERO;
+      COMMIT;
+    END;
+END;
