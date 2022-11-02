@@ -1,0 +1,23 @@
+create or replace package salarios2 AS
+
+     PROCEDURE consultar (num EMP.EMP_NO%TYPE, sal OUT EMP.SALARIO%TYPE, com OUT EMP.COMISION%TYPE);
+     PROCEDURE modificar (num EMP.EMP_NO%TYPE, sal EMP.SALARIO%TYPE, com EMP.COMISION%TYPE);
+
+END;
+
+
+
+create or replace package body salarios2 AS
+
+
+     PROCEDURE consultar (num EMP.EMP_NO%TYPE, sal OUT EMP.SALARIO%TYPE, com OUT EMP.COMISION%TYPE) AS
+       BEGIN
+           SELECT SALARIO, COMISION INTO SAL, COM FROM emp WHERE EMP_NO = NUM;
+       END;
+     PROCEDURE modificar (num EMP.EMP_NO%TYPE, sal EMP.SALARIO%TYPE, com EMP.COMISION%TYPE)AS
+       BEGIN
+           UPDATE emp SET SALARIO = SAL, COMISION = COM WHERE EMP_NO = NUM;
+           COMMIT;
+       END;
+
+END;
