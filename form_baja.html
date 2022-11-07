@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baja</title>
+</head>
+<body>
+<form action="baja" method="POST">
+     {% csrf_token %}
+  <h1>Baja de departamento</h1>
+  Departamento a eliminar &nbsp;<input type="text" name="departamento" id="departamento">
+  <br><br>
+  <input type="submit" value="Enviar">
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar</title>
+</head>
+<body>
+
+<form action="modificar" method="POST">
+    {% csrf_token %}
+    <h1>Modificar departamento</h1>
+    Depto. Nº &nbsp;<input type="text" name="departamento" id="departamento">
+    <br> <br>
+    Nuevo Nombre &nbsp;<input type="text" name="nombre" id="nombre">
+    <br> <br>
+    Nueva Localidad &nbsp;<input type="text" name="localidad" id="localidad">
+    <br> <br>
+
+    <input type="submit" value="Modificar">
+</form>
+
+</body>
+</html>
