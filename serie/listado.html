@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de series</title>
+</head>
+<body>
+<h1>Listado de series</h1>
+<table>
+  <tr>
+      <th>Id.Serie</th>
+      <th>Nombre</th>
+      <th>Imagen</th>
+      <th>Puntuación</th>
+      <th>Año</th>
+  </tr>
+  {% for i in listado_series %}
+  <tr>
+      <td>{{ i.idSerie }}</td>
+      <td>{{ i.nombre}}</td>
+      <td><img src="{{ i.imagen }}" width="400" height="300"></td>
+      <td>{{ i.puntuacion }}</td>
+      <td>{{ i.anyo }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>

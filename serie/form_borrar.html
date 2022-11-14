@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Borrar</title>
+</head>
+<body>
+<form action="borrar" method="POST">
+
+    {% csrf_token %}
+
+    <h1>Listado de series</h1>
+    <h2>Nombre de la serie:</h2>
+    <select name="serie">
+    {% for i in listado_series %}
+      <option id={{ i.idSerie }}>{{ i.nombre }}</option>
+    {% endfor %}
+    </select>
+    <br><br>
+
+    <input type="submit" value="Enviar">
+
+</form>
+
+</body>
+</html>
