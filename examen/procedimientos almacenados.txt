@@ -1,0 +1,30 @@
+CREATE OR REPLACE PROCEDURE alta_doctor (p_hospital DOCTOR.HOSPITAL_COD%TYPE, p_doctor DOCTOR.DOCTOR_NO%TYPE, p_apellido DOCTOR.APELLIDO%TYPE,
+  p_especialidad DOCTOR.ESPECIALIDAD%TYPE, p_salario DOCTOR.SALARIO%TYPE) AS
+BEGIN
+  INSERT INTO doctor
+  VALUES(p_hospital, p_doctor, p_apellido, p_especialidad, p_salario);
+  COMMIT;
+END;
+
+-------------
+
+
+CREATE OR REPLACE PROCEDURE eliminar_doctor (p_doctor DOCTOR.DOCTOR_NO%TYPE)
+AS
+BEGIN
+  DELETE FROM doctor WHERE DOCTOR_NO = p_doctor;
+  COMMIT;
+
+END;
+
+
+-------
+
+
+CREATE OR REPLACE PROCEDURE modificar_doctor (p_doctor DOCTOR.DOCTOR_NO%TYPE, p_salario DOCTOR.SALARIO%TYPE)
+AS
+BEGIN
+  UPDATE doctor SET DOCTOR_NO = p_doctor, SALARIO = p_salario WHERE DOCTOR_NO = p_doctor;
+  COMMIT;
+
+END;
