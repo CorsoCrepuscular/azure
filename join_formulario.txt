@@ -1,0 +1,63 @@
+public partial class Form1 : Form
+    {
+        tablasDataContext contexto = new tablasDataContext();
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        /* VERSIÓN 1: Pasando el camnpo visualizado (DNOMBRE)
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Visualiza el combo
+            var datos = from p in contexto.DEPT
+                         select p.DNOMBRE;
+            this.cmbLocalidades.DataSource = datos; 
+            this.cmbLocalidades.DisplayMember= "DNOMBRE";            
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            
+            string deptSelec = this.cmbLocalidades.SelectedValue.ToString();
+                
+                // int.Parse(this.cmbLocalidades.ValueMember);
+            var datos = from d in contexto.DEPT
+                        join em in contexto.EMP
+                        on d.DEPT_NO equals em.DEPT_NO
+                        where d.DNOMBRE == deptSelec
+                        select new { Apellido = em.APELLIDO, Salario = em.SALARIO, Departamento = d.DNOMBRE, Localidad = d.LOC };
+
+            this.grdDatos.DataSource = datos;
+            this.grdDatos.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+        */
+
+        // Versión 2: Pasando un campo oculto (DEPT_NO)
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Visualiza el combo
+            var datos = from p in contexto.DEPT
+                        select new { p.DNOMBRE, p.DEPT_NO };
+            this.cmbLocalidades.DataSource = datos;
+            this.cmbLocalidades.DisplayMember = "DNOMBRE";
+            this.cmbLocalidades.ValueMember = "DEPT_NO";
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            int deptSelec = int.Parse(this.cmbLocalidades.SelectedValue.ToString());           
+
+            // int.Parse(this.cmbLocalidades.ValueMember);
+            var datos = from d in contexto.DEPT
+                        join em in contexto.EMP
+                        on d.DEPT_NO equals em.DEPT_NO
+                        where d.DEPT_NO == deptSelec
+                        select new { Apellido = em.APELLIDO, Salario = em.SALARIO, Departamento = d.DNOMBRE, Localidad = d.LOC };
+
+            this.grdDatos.DataSource = datos;
+            this.grdDatos.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+    }
