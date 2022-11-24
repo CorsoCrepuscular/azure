@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HOSPITAL" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=HOSPITAL;Integrated Security=True" SettingsObjectName="alta_doctor.Properties.Settings" SettingsPropertyName="HOSPITALConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DOCTOR" Member="DOCTOR">
+    <Type Name="DOCTOR">
+      <Column Name="HOSPITAL_COD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DOCTOR_NO" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="APELLIDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ESPECIALIDAD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SALARIO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOSPITAL" Member="HOSPITAL">
+    <Type Name="HOSPITAL">
+      <Column Name="HOSPITAL_COD" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIRECCION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NUM_CAMA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.ALTADOCTOR" Method="ALTADOCTOR">
+    <Parameter Name="HOSPITAL_COD" Parameter="hOSPITAL_COD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DOCTOR_NO" Parameter="dOCTOR_NO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="APELLIDO" Parameter="aPELLIDO" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="ESPECIALIDAD" Parameter="eSPECIALIDAD" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="SALARIO" Parameter="sALARIO" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ALTADOCTOR2" Method="ALTADOCTOR2">
+    <Parameter Name="HOSPITAL_COD" Parameter="hOSPITAL_COD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DOCTOR_NO" Parameter="dOCTOR_NO" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="APELLIDO" Parameter="aPELLIDO" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ESPECIALIDAD" Parameter="eSPECIALIDAD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SALARIO" Parameter="sALARIO" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.BAJADOCTOR" Method="BAJADOCTOR">
+    <Parameter Name="DOCTOR_NO" Parameter="dOCTOR_NO" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MODIFICARDOCTOR" Method="MODIFICARDOCTOR">
+    <Parameter Name="HOSPITAL_COD" Parameter="hOSPITAL_COD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DOCTOR_NO" Parameter="dOCTOR_NO" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="APELLIDO" Parameter="aPELLIDO" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ESPECIALIDAD" Parameter="eSPECIALIDAD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SALARIO" Parameter="sALARIO" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
