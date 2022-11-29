@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="hospital" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=hospital;Integrated Security=True" SettingsObjectName="Ej35_procedimientos_salida_2.Properties.Settings" SettingsPropertyName="hospitalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HOSPITAL" Member="HOSPITAL">
+    <Type Name="HOSPITAL">
+      <Column Name="HOSPITAL_COD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIRECCION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NUM_CAMA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PLANTILLA" Member="PLANTILLA">
+    <Type Name="PLANTILLA">
+      <Column Name="HOSPITAL_COD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SALA_COD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMPLEADO_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="APELLIDO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FUNCION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="T" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SALARIO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.DATOSHOSPITAL" Method="DATOSHOSPITAL">
+    <Parameter Name="HOSPITAL_COD" Parameter="hOSPITAL_COD" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PERSONAS" Parameter="pERSONAS" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="SUMA" Parameter="sUMA" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="MEDIA" Parameter="mEDIA" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
