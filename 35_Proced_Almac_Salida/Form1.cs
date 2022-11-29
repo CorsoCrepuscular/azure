@@ -20,31 +20,20 @@ namespace Ej35_procedimientos_salida_2
         // Mostrar listado con código de hospitales
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*
-            var datosHospitales = from h in contexto.HOSPITAL
-                                  select h.HOSPITAL_COD;
-            */
-
+           
             var datosHospitales = from h in contexto.HOSPITAL
                                   select new { h.HOSPITAL_COD, h.NOMBRE };
 
             this.cmbHospitales.DataSource = datosHospitales; 
             this.cmbHospitales.DisplayMember = "NOMBRE";
             this.cmbHospitales.ValueMember = "HOSPITAL_COD";
-
-            /*
-            foreach (var d in datosHospitales)
-            {
-                this.cmbHospitales.Items.Add(d);
-                
-            }
-            */
-
+           
         }
 
+        // Visualizar datos
         private void cmbHospitales_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // string datosHosSel = cmbHospitales.SelectedItem.ToString();
+          
             string datosHosSel = cmbHospitales.SelectedValue.ToString();
 
             int? media, suma, personas;
