@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Nuevo Doctor";
+}
+
+@using Ej7MantMvcDoctores.Models
+@model List<DOCTOR>
+
+<h2>Nuevo doctor</h2>
+
+@using (Html.BeginForm("Create", "Doctores", FormMethod.Post))
+{
+    <ul>
+        <li>
+            <label for="hosCod">HOSPITAL_COD</label>
+            <input type="text" name="hosCod"  />
+        </li>
+        <li>
+            <label for="docNum">DOCTOR_NO</label>
+            <input type="text" name="docNum"  />
+        </li>
+        <li>
+            <label for="ape">APELLIDO</label>
+            <input type="text" name="ape"  />
+        </li>
+        <li>
+            <label for="esp">ESPECIALIDAD</label>
+            <input type="text" name="esp"  />
+        </li>
+        <li>
+            <label for="sal">SALARIO</label>
+            <input type="number" name="sal"  />
+        </li>
+    </ul>
+
+    <input type="submit" value="Insertar" />
+
+}
+

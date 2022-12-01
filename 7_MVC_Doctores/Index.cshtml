@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@using Ej7MantMvcDoctores.Models;
+@model List<DOCTOR>
+
+<h2>DOCTORES</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>HOSPITAL_COD</th>
+            <th>DOCTOR_NO</th>
+            <th>APELLIDO</th>
+            <th>ESPECIALIDAD</th>
+            <th>SALARIO</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (DOCTOR doc in Model)
+        {
+            <tr>
+                <td>@doc.HOSPITAL_COD</td>
+                <td>@doc.DOCTOR_NO</td>
+                <td>@doc.APELLIDO</td>
+                <td>@doc.ESPECIALIDAD</td>
+                <td>@doc.SALARIO</td>
+                <td>
+                    @Html.ActionLink("Borrar", "Destroy", "Doctores", new { id = @doc.DOCTOR_NO }, new { onclick = "return confirm('¿Está seguro que quiere eliminar el registro?');" })
+
+                    @Html.ActionLink("Editar", "Edit", "Doctores", new { id = @doc.DOCTOR_NO }, null)
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+@Html.ActionLink("Alta", "New", "Doctores")
+

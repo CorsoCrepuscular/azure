@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Editar doctor";
+}
+
+@using Ej7MantMvcDoctores.Models
+@model DOCTOR
+
+<h2>Editar doctor</h2>
+
+@using (Html.BeginForm("Update", "Doctores", FormMethod.Post))
+{
+    <ul>
+        <li>
+            <label for="hosCod">HOSPITAL_COD</label>
+            <input type="text" name="hosCod" value="@Model.HOSPITAL_COD" />
+        </li>
+        <li>
+            <label for="docNum">DOCTOR_NO</label>
+            <input type="text" name="docNum" value="@Model.DOCTOR_NO" />
+        </li>
+        <li>
+            <label for="ape">APELLIDO</label>
+            <input type="text" name="ape" value="@Model.APELLIDO" />
+        </li>
+        <li>
+            <label for="esp">ESPECIALIDAD</label>
+            <input type="text" name="esp" value="@Model.ESPECIALIDAD" />
+        </li>
+        <li>
+            <label for="sal">SALARIO</label>
+            <input type="number" name="sal" value="@Model.SALARIO" />
+        </li>
+    </ul>
+
+    <input type="submit" value="Editar" />
+
+}
