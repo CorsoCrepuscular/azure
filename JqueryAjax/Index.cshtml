@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src='@Url.Content("~/Scripts/jquery-3.4.1.min.js")' type="text/javascript"></script>
+
+<h2>INDEX</h2>
+
+<ol>
+    <li class="one">
+
+        <h5>HOSPITALES</h5>
+        <button type="button" id="btnhospitales">Vista de hospitales</button>
+        <div id="listahospitales" style="display:none"></div>
+
+    </li>
+
+    <li class="two">
+
+        <h5>DOCTORES</h5>
+        <button type="button" id="btndoctores">Vista de doctores</button>
+        <div id="listadoctores" style="display:none"></div>
+
+    </li>
+
+    <li class="three">
+
+        <h5>PLANTILLA</h5>
+        <button type="button" id="btnplantilla">Vista de plantilla</button>
+        <div id="listaplantilla" style="display:none"></div>
+
+    </li>
+</ol>
+
+<script>
+    $(document).ready(function () {
+        $("#btnhospitales").click(function () {
+            $("#listahospitales").load("/Hospitales/RecuperarHospitales");
+            $("#listahospitales").toggle();
+        });
+
+        $("#btndoctores").click(function () {
+            $("#listadoctores").load("/Hospitales/RecuperarDoctores");
+            $("#listadoctores").toggle();
+        });
+
+        $("#btnplantilla").click(function () {
+            $("#listaplantilla").load("/Hospitales/RecuperarPlantilla");
+            $("#listaplantilla").toggle();
+        });
+    });
+</script>
+

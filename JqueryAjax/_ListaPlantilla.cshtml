@@ -1,0 +1,38 @@
+﻿@using JqueryAjax.Models;
+@model IEnumerable<PLANTILLA>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LISTADO DE PLANTILLA</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>HOSPITAL_COD</th>
+                <th>APELLIDO</th>
+                <th>FUNCION</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (PLANTILLA empleado in Model)
+            {
+                <tr>
+                    <td>@empleado.HOSPITAL_COD</td>
+                    <td>@empleado.APELLIDO</td>
+                    <td>@empleado.FUNCION</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</body>
+</html>
+

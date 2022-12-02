@@ -1,0 +1,39 @@
+﻿@using JqueryAjax.Models;
+@model IEnumerable<DOCTOR>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LISTADO DE DOCTORES</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>DOCTOR NO</th>
+                <th>APELLIDO</th>
+                <th>ESPECIALIDAD</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (DOCTOR doctor in Model)
+            {
+                <tr>
+                    <td>@doctor.DOCTOR_NO</td>
+                    <td>@doctor.APELLIDO</td>
+                    <td>@doctor.ESPECIALIDAD</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</body>
+</html>
+
+
