@@ -32,7 +32,7 @@ namespace az13ApiSeriesPersonajes.Controllers
         public void InsertarSerie(Serie serie) 
         {
             this.repo.InsertarSerie(serie.IdSerie, serie.Nombre,
-                serie.Imagen, serie.Puntuacion, serie.Anyo);
+                serie.Imagen, serie.Puntuacion, serie.Año);
         }
 
         //api/Series --> PUT
@@ -40,7 +40,7 @@ namespace az13ApiSeriesPersonajes.Controllers
         public void ModificarSerie(Serie serie)
         {
             this.repo.ModificarSerie(serie.IdSerie, serie.Nombre,
-                serie.Imagen, serie.Puntuacion, serie.Anyo);
+                serie.Imagen, serie.Puntuacion, serie.Año);
         }
 
         //api/Series --> DELETE

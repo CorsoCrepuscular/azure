@@ -29,7 +29,7 @@ namespace az13ApiSeriesPersonajes.Repositories
             serie.Nombre = nomS;
             serie.Imagen = imaS;
             serie.Puntuacion = punS;
-            serie.Anyo= anyS;
+            serie.Año= anyS;
             this.context.Series.Add(serie);
             this.context.SaveChanges();
         }
@@ -41,7 +41,7 @@ namespace az13ApiSeriesPersonajes.Repositories
             serie.Nombre = nomS;
             serie.Imagen = imaS;
             serie.Puntuacion = punS;
-            serie.Anyo = anyS;
+            serie.Año = anyS;
             this.context.SaveChanges();
         }
 

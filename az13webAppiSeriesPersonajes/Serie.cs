@@ -12,7 +12,7 @@ namespace az13ApiSeriesPersonajes.Models
         [Column("IDSERIE")]
         public int IdSerie { get; set; }
 
-        [Column("NOMBRE")]
+        [Column("SERIE")]
         public String Nombre { get; set; }
 
         [Column("IMAGEN")]
@@ -21,8 +21,8 @@ namespace az13ApiSeriesPersonajes.Models
         [Column("PUNTUACION")]
         public double Puntuacion{ get; set; }
 
-        [Column("ANYO")]
-        public int Anyo { get; set; }
+        [Column("AÑO")]
+        public int Año { get; set; }
 
     }
 }
